@@ -1,0 +1,28 @@
+<h1><%= @store.name %></h1>
+<p>Address: <%= @store.address %></p>
+<p>Average Rating: <%= @store.average_rating %></p>
+
+<h2>Submit Your Rating</h2>
+<%= form_with(model: [@store, Rating.new], local: true) do |form| %>
+  <%= form.label :rating %>
+  <%= form.number_field :rating, in: 1..5 %>
+  <%= form.submit "Submit" %>
+<% end %>
+
+<h2>Ratings</h2>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ratings.each do |rating| %>
+      <tr>
+        <td><%= rating.user.name %></td>
+        <td><%= rating.rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
