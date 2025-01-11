@@ -1,0 +1,12 @@
+class StoresController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    @stores = Store.all.order(:name)
+  end
+
+  def show
+    @store = Store.find(params[:id])
+    @ratings = @store.ratings
+  end
+end
