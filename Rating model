@@ -1,0 +1,4 @@
+rails generate model Rating 
+user:references store:references 
+rating:integer
+rails db:migrate
