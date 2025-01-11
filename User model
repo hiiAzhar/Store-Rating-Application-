@@ -1,0 +1,4 @@
+rails generate devise User 
+name:string email:string 
+address:string role:integer
+rails db:migrate
