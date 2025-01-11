@@ -1,0 +1,5 @@
+rails generate model Store 
+name:string email:string 
+address:string 
+average_rating:float
+rails db:migrate
